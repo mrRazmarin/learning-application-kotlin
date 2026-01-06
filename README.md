@@ -19,11 +19,12 @@
 - ✅ **`Modifier`** — ключевой инструмент для размеров, отступов, кликабельности, скруглений и т.д.
 
 ### 🎨 Компоненты UI
-- ✅ **`Card`** — карточки с elevation, закруглёнными углами
-- ✅ **`Image`** — загрузка из `drawable`, `contentScale`, `clip` (в т.ч. `CircleShape`)
-- ✅ **`Text`** — стилизация (размер, вес, цвет)
-- ✅ **`Icon`** — векторные и растровые иконки внутри `Button` и `IconButton`
-- ✅ **`Button` (Material 3)** — кастомизация цветов, состояний, размеров, отключение через `enabled`
+- ✅ **Card** — карточки с elevation и закруглёнными углами
+- ✅ **Image** — загрузка из `drawable`, `contentScale`, `clip` (включая `CircleShape`)
+- ✅ **Text** — стилизация (размер, вес, цвет)
+- ✅ **Icon** — векторные и растровые иконки внутри `Button` и `IconButton`
+- ✅ **Button (Material 3)** — кастомизация цветов, состояний, размеров, отключение через `enabled`
+- ✅ **LazyColumn** — эффективная вертикальная прокрутка для списка карточек/элементов (реализовано)
 
 ### 🧠 Управление состоянием
 - ✅ **`remember { mutableStateOf(...) }`** — локальное состояние (имя, профессия)
@@ -48,8 +49,37 @@
 
 ---
 
-## 🚀 Планы на будущее
-- [ ] `LazyColumn` — эффективный скролл для большого числа карточек
+## 💻 Как запустить (Quickstart)
+
+Требования:
+- Android Studio Giraffe / Hedgehog (или новее)
+- JDK 17+
+- Минимальная поддерживаемая версия Android: API 24 (Android 7.0) — проверяйте в `app/build.gradle.kts`
+
+Шаги:
+1. Клонируйте репозиторий:
+   git clone https://github.com/mrRazmarin/learning-application-kotlin.git
+2. Откройте проект в Android Studio.
+3. Дождитесь синхронизации Gradle (Gradle sync).
+4. Запустите на эмуляторе или физическом устройстве с API >= 24.
+
+Команды (в корне проекта):
+- Сборка debug-версии:
+  ./gradlew assembleDebug
+- Установка на подключённое устройство:
+  ./gradlew installDebug
+
+---
+
+## 🗂 Структура проекта (общая)
+- app/ — модуль приложения (UI, resources, манифест)
+- src/main/java|kotlin/... — пакеты с реализацией Compose UI и логикой
+- res/drawable/ — изображения и иконки
+- img/ — скриншоты для README
+
+---
+
+## 🔎 Планы на будущее
 - [ ] `ViewModel` + `StateHoisting` — вынос логики из UI
 - [ ] Темизация (`MaterialTheme`, `colorScheme`)
 - [ ] Анимации (`animate*AsState`, `Transition`)
