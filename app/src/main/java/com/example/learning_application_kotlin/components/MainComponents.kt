@@ -112,7 +112,7 @@ object MainComponents {
                                 counter.intValue++
                                 if (counter.intValue == 10) {
                                     counter.intValue = 0
-                                    Log.d("Click_on_button", "Returned to '0' in counter")
+                                    Log.d("Click_on_button", "Returned to '0' in counter with name = '${name.value}'")
                                 }
                                 else
                                     Log.d("Click_on_button", "Click on plus button with name = '${name.value}' and counter = '${counter.intValue}'")
