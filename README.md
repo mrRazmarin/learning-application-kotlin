@@ -66,10 +66,3 @@
 - **Gradle:** Kotlin DSL, Compose BOM
 
 ---
-
-## 📚 Полезные ссылки
-- [Jetpack Compose Documentation](https://developer.android.com/jetpack/compose)
-- [Material 3 Guidelines](https://m3.material.io)
-- [JetBrains Kotlin Course](https://hyperskill.org/kotlin)
-
----
