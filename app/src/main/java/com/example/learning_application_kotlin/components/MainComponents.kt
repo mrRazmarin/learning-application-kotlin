@@ -18,9 +18,6 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -28,30 +25,19 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.learning_application_kotlin.R
-import com.example.learning_application_kotlin.components.utils.getRandomName
-import com.example.learning_application_kotlin.components.utils.getRandomProf
+import com.example.learning_application_kotlin.components.utils.RandomDataState
+import com.example.learning_application_kotlin.components.utils.getDataAboutPerson
 
 
 object MainComponents {
     @Composable
     fun PersonCard() {
-        var counter = remember {
-            mutableIntStateOf(0)
-        }
+        val randomData: RandomDataState = getDataAboutPerson()
 
-        var prof = remember {
-            mutableStateOf(
-                getRandomProf()
-            )
-        }
-        var name = remember {
-            mutableStateOf(
-                getRandomName()
-            )
-        }
         Card(
             modifier = Modifier
                 .statusBarsPadding()
@@ -80,12 +66,12 @@ object MainComponents {
                     horizontalAlignment = Alignment.Start
                 ) {
                     Text(
-                        text = name.value,
+                        text = randomData.name.value,
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        text = prof.value,
+                        text = randomData.prof.value,
                         fontSize = 12.sp,
                         color = LocalContentColor.current.copy(alpha = 0.7f)
                     )
@@ -109,13 +95,13 @@ object MainComponents {
                                 containerColor = Color.Transparent
                             ),
                             onClick = {
-                                counter.intValue++
-                                if (counter.intValue == 10) {
-                                    counter.intValue = 0
-                                    Log.d("Click_on_button", "Returned to '0' in counter with name = '${name.value}'")
+                                randomData.counter.intValue++
+                                if (randomData.counter.intValue == 10) {
+                                    randomData.counter.intValue = 0
+                                    Log.d("Click_on_button", "Returned to '0' in counter with name = '${randomData.name}'")
                                 }
                                 else
-                                    Log.d("Click_on_button", "Click on plus button with name = '${name.value}' and counter = '${counter.intValue}'")
+                                    Log.d("Click_on_button", "Click on plus button with name = '${randomData.name}' and counter = '${randomData.counter.intValue}'")
                             }
 
                         ) {
@@ -132,10 +118,10 @@ object MainComponents {
                                 containerColor = Color.Transparent
                             ),
                             onClick = {
-                                counter.intValue--
-                                Log.d("Click_on_button", "Click on minus button with name = '${name.value}' and counter = '${counter.intValue}'")
+                                randomData.counter.intValue--
+                                Log.d("Click_on_button", "Click on minus button with name = '${randomData.name.value}' and counter = '${randomData.counter.intValue}'")
                             },
-                            enabled = counter.intValue > 0
+                            enabled = randomData.counter.intValue > 0
                         ) {
                             Image(
                                 painter = painterResource(R.drawable.minus),
@@ -149,7 +135,7 @@ object MainComponents {
                     .padding(end = 10.dp),
                     horizontalAlignment = Alignment.End
                 ) {
-                    Text(text = "${counter.intValue}")
+                    Text(text = "${randomData.counter.intValue}")
                 }
             }
         }
