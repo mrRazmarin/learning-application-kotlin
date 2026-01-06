@@ -78,8 +78,6 @@ Commands (from project root):
 - res/drawable/ — images and icons
 - img/ — screenshots used in README
 
-(Structure may slightly differ — open the project to verify exact paths.)
-
 ---
 
 ## 🔎 Future plans
