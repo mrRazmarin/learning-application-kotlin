@@ -1,4 +1,4 @@
-package com.example.learning_application_kotlin.components.utils
+package com.example.learning_application_kotlin.old_not_use.utils
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableIntState

@@ -1,4 +1,4 @@
-package com.example.learning_application_kotlin.components
+package com.example.learning_application_kotlin.old_not_use.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -22,8 +22,8 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.learning_application_kotlin.R
-import com.example.learning_application_kotlin.components.utils.RandomDataState
-import com.example.learning_application_kotlin.components.utils.getDataAboutPerson
+import com.example.learning_application_kotlin.old_not_use.utils.RandomDataState
+import com.example.learning_application_kotlin.old_not_use.utils.getDataAboutPerson
 
 object LazyRowComponents {
     var isSelected: Boolean = false

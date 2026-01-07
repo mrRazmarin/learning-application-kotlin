@@ -1,4 +1,4 @@
-package com.example.learning_application_kotlin.patterns
+package com.example.learning_application_kotlin.old_not_use.patterns
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Spacer
@@ -11,9 +11,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.learning_application_kotlin.components.LazyRowComponents
-import com.example.learning_application_kotlin.components.TextExpandComponents
-import com.example.learning_application_kotlin.components.utils.initPerson
+import com.example.learning_application_kotlin.old_not_use.components.LazyRowComponents
+import com.example.learning_application_kotlin.old_not_use.components.TextExpandComponents
+import com.example.learning_application_kotlin.old_not_use.utils.initPerson
 
 @Composable
 fun LazyRowPatterns() {
