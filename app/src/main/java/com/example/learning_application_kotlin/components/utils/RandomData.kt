@@ -6,7 +6,7 @@ fun getRandomName(): String {
     val list = listOf("John", "Bob", "Rufus", "Mikhail", "Maxwell")
 
     val random = Random
-    val randomValue = random.nextInt(from = 0, until = list.size - 1)
+    val randomValue = random.nextInt(from = 0, until = list.size)
 
     return list[randomValue]
 }
@@ -15,12 +15,12 @@ fun getRandomProf(): String {
     val list = listOf("Cleaner", "Coach", "Consultant", "Cook", "Courier")
 
     val random = Random
-    val randomValue = random.nextInt(from = 0, until = list.size - 1)
+    val randomValue = random.nextInt(from = 0, until = list.size)
 
     return list[randomValue]
 }
 
-fun getRandomTitleEducations(): MutableList<Education> {
+fun getRandomTitleEducations(): List<Education> {
     val listEducations: List<String> = listOf("Computer Science", "Software Engineering",
         "Electrical Engineering", "Mechanical Engineering", "Civil Engineering",
         "Biomedical Engineering", "Physics", "Mathematics", "Statistics",
@@ -28,7 +28,7 @@ fun getRandomTitleEducations(): MutableList<Education> {
         "Finance", "Business Administration", "Political Science", "Linguistics", "Architecture"
     )
 
-    val setEducations: Set<String> = setOf()
+    val setEducations: MutableSet<String> = mutableSetOf()
 
     var tempCounter: Int = Random.nextInt(1, listEducations.size)
 
@@ -41,7 +41,7 @@ fun getRandomTitleEducations(): MutableList<Education> {
             continue
         } else {
             tempCounter--
-            setEducations.plus(tempEducationChoiceFromList)
+            setEducations.add(tempEducationChoiceFromList)
         }
     }
 
